@@ -1,0 +1,147 @@
+Di bawah ini adalah knowledge base resmi platform.
+
+Gunakan informasi ini sebagai SATU-SATUNYA sumber jawaban.
+
+### INFORMASI PLATFORM atau Website
+
+SMKN 5 Selayar E-Store adalah marketplace produk digital terintegrasi yang berfungsi sebagai wadah distribusi berbagai aset digital kreatif dan edukatif. Platform ini dirancang untuk mempertemukan kebutuhan pengguna akan solusi digital berkualitas dengan karya-karya orisinal yang dikembangkan secara profesional. Fokus utama platform adalah menyediakan aksesibilitas produk digital yang mudah, terjangkau, dan relevan bagi pelajar, pelaku usaha mikro, serta masyarakat umum.
+
+Fungsi utama platform mencakup manajemen katalog produk digital, sistem transaksi otomatis melalui gerbang pembayaran, dan distribusi aset digital secara langsung. Pengguna dapat mengeksplorasi berbagai kategori produk, melakukan transaksi yang aman, dan mengelola seluruh aset digital yang telah dibeli melalui satu dasbor terpusat.
+
+### VISI
+
+Menjadi pusat ekosistem produk digital yang unggul dalam mendorong transformasi kreatif dan kemandirian ekonomi digital melalui penyediaan aset berkualitas tinggi yang dapat diakses oleh seluruh lapisan masyarakat secara inovatif dan berkelanjutan.
+
+### MISI
+
+SMKN 5 Selayar E-Store memiliki misi untuk menyediakan katalog produk digital yang telah melalui proses kurasi ketat guna memastikan kualitas dan manfaat bagi pengguna. Platform ini memberikan dukungan penuh bagi para kreator untuk mendistribusikan karya digital mereka secara profesional dan terorganisir. Kami juga berkomitmen untuk menghadirkan kemudahan akses melalui antarmuka yang intuitif serta menjamin keamanan dan kenyamanan setiap transaksi menggunakan sistem verifikasi otomatis yang andal.
+
+### FITUR PAYMENT GATEWAY
+
+Platform ini mengintegrasikan sistem payment gateway sebagai mesin pemroses transaksi utama yang bekerja secara otomatis dan real-time. Sistem ini memungkinkan pengguna untuk melakukan pembayaran melalui berbagai kanal digital tanpa perlu melakukan konfirmasi manual.
+
+Payment gateway berfungsi sebagai jembatan aman antara pengguna, lembaga keuangan, dan platform untuk memastikan data transaksi terlindungi dengan enkripsi standar industri. Proses verifikasi pembayaran dilakukan secara otomatis oleh sistem dalam hitungan detik setelah transaksi diselesaikan. Setelah verifikasi berhasil, sistem akan secara instan mengubah status transaksi dan memberikan akses produk kepada pembeli.
+
+### PRODUK DIGITAL
+
+Ebook merupakan dokumen digital dalam format standar yang berisi materi edukasi, panduan praktis, atau literatur kreatif.
+
+Video Course adalah rangkaian materi pembelajaran visual yang disusun secara sistematis untuk penguasaan keahlian tertentu.
+
+AI Prompt adalah sekumpulan instruksi terstruktur untuk mengoptimalkan penggunaan alat kecerdasan buatan dalam berbagai kebutuhan produktivitas.
+
+Template Digital merupakan dokumen siap pakai seperti desain presentasi, format administrasi, atau alat bantu produktivitas lainnya.
+
+Source Code adalah rangkaian kode pemrograman orisinal yang dapat digunakan sebagai kerangka dasar pengembangan aplikasi atau situs web.
+
+Desain Digital mencakup aset visual seperti ilustrasi, ikon, dan elemen grafis profesional yang siap digunakan untuk kebutuhan kreatif.
+
+### DETAIL PRODUK
+
+Ebook: Panduan tertulis dalam format digital yang informatif dan mudah dipahami.
+Kisaran Harga: Rp25.000 hingga Rp150.000.
+Model Akses: Download langsung setelah pembayaran.
+
+Video Course: Akses ke materi pembelajaran berbasis video berkualitas tinggi.
+Kisaran Harga: Rp99.000 hingga Rp450.000.
+Model Akses: Akses online melalui akun pengguna.
+
+AI Prompt: Paket instruksi khusus untuk meningkatkan efisiensi penggunaan teknologi AI.
+Kisaran Harga: Rp15.000 hingga Rp75.000.
+Model Akses: Download teks atau salin akses.
+
+Template Digital: Berbagai format dokumen dan desain yang dapat disunting kembali.
+Kisaran Harga: Rp35.000 hingga Rp125.000.
+Model Akses: Download file sumber.
+
+Source Code: Skrip pemrograman untuk fungsionalitas aplikasi atau web tertentu.
+Kisaran Harga: Rp150.000 hingga Rp1.500.000.
+Model Akses: Download file arsip dan lisensi penggunaan.
+
+Desain Digital: Kumpulan aset grafis untuk kebutuhan personal maupun komersial.
+Kisaran Harga: Rp20.000 hingga Rp200.000.
+Model Akses: Download file gambar atau vektor.
+
+### ALUR PENGGUNA & TRANSAKSI
+
+Pengguna memulai dengan melakukan registrasi akun menggunakan email aktif dan data diri dasar. Setelah akun terverifikasi, pengguna dapat melakukan login untuk masuk ke lingkungan platform. Tahap selanjutnya adalah pemilihan produk digital yang diinginkan melalui katalog yang tersedia. Pengguna kemudian diarahkan ke halaman checkout untuk meninjau detail pesanan dan total biaya.
+
+Pada tahap pembayaran, pengguna memilih metode yang tersedia melalui payment gateway. Setelah pembayaran diselesaikan, sistem payment gateway akan melakukan verifikasi secara otomatis tanpa melibatkan bantuan admin. Begitu status berubah menjadi sukses, sistem secara instan memberikan akses ke produk digital yang dibeli, yang dapat langsung diunduh atau diakses melalui akun pengguna.
+
+### PEMBAYARAN
+
+Seluruh transaksi dilakukan menggunakan mata uang Rupiah (Rp) melalui saluran pembayaran digital yang didukung oleh sistem payment gateway. Status pembayaran dalam sistem dikategorikan sebagai berikut:
+
+Pending: Menunjukkan bahwa instruksi pembayaran telah dibuat namun sistem masih menunggu penyelesaian transaksi dari pihak pengguna.
+
+Berhasil: Menunjukkan bahwa dana telah diterima dan diverifikasi oleh sistem, sehingga akses produk dapat diberikan.
+
+Gagal: Menunjukkan adanya kesalahan teknis atau penolakan transaksi dari lembaga keuangan terkait.
+
+Kedaluwarsa: Menunjukkan bahwa batas waktu pembayaran yang ditentukan telah habis sebelum pengguna menyelesaikan transaksi.
+
+### AKSES & DISTRIBUSI PRODUK DIGITAL
+
+Setelah transaksi berstatus berhasil, pengguna dapat mengakses produk melalui halaman dasbor pribadi pada menu riwayat pembelian. Produk dalam bentuk file dapat diunduh secara berulang sesuai dengan batas wajar yang ditetapkan oleh platform. Akses ulang ini tersedia selama akun pengguna aktif dan tidak melanggar ketentuan layanan.
+
+Penggunaan produk digital terikat pada ketentuan lisensi dasar, di mana produk hanya diperuntukkan bagi penggunaan pribadi atau internal dan tidak diperbolehkan untuk didistribusikan kembali secara ilegal. Hak akses yang diberikan bersifat non-eksklusif dan tidak dapat dipindahtangankan kepada pihak lain.
+
+### KEBIJAKAN & KETENTUAN
+
+Platform menerapkan kebijakan pengembalian dana (refund) yang sangat terbatas mengingat sifat produk digital yang dapat langsung diakses atau diunduh. Refund hanya dapat dipertimbangkan jika terjadi kendala teknis permanen pada sistem platform yang menyebabkan produk tidak dapat diakses sama sekali setelah pembayaran berhasil.
+
+Seluruh hak cipta atas produk digital tetap dimiliki oleh kreator atau platform sesuai dengan perjanjian yang berlaku. Pengguna bertanggung jawab penuh atas keamanan akun mereka dan penggunaan aset digital yang telah dibeli sesuai dengan aturan lisensi. Platform tidak memberikan jaminan mutlak atas hasil akhir penggunaan produk digital namun memastikan bahwa produk dikirimkan sesuai dengan deskripsi yang tertera.
+
+### SOP (STANDARD OPERATING PROCEDURE)
+
+#### SOP Registrasi Pengguna
+
+1. Pengguna mengisi formulir pendaftaran pada halaman registrasi.
+2. Sistem mengirimkan verifikasi ke email yang didaftarkan.
+3. Pengguna melakukan konfirmasi melalui tautan verifikasi.
+4. Akun aktif dan pengguna diarahkan untuk melengkapi profil.
+
+#### SOP Proses Pembelian
+
+1. Pengguna memasukkan produk ke dalam keranjang atau memilih beli langsung.
+2. Sistem melakukan generate detail pesanan dan ID transaksi.
+3. Pengguna diarahkan ke antarmuka payment gateway.
+4. Sistem menunggu notifikasi pembayaran dari provider payment gateway.
+
+#### SOP Penanganan Pembayaran Gagal
+
+1. Sistem menerima informasi kegagalan transaksi dari payment gateway.
+2. Status pesanan diperbarui secara otomatis menjadi gagal atau expired.
+3. Sistem mengirimkan notifikasi kepada pengguna terkait status tersebut.
+4. Pengguna disarankan untuk melakukan pesanan ulang dengan metode berbeda.
+
+#### SOP Permintaan Refund
+
+1. Pengguna mengajukan keluhan teknis melalui saluran bantuan resmi.
+2. Tim teknis melakukan validasi terhadap aksesibilitas produk digital terkait.
+3. Jika terbukti terjadi kegagalan sistem yang tidak dapat diperbaiki, permintaan diproses.
+4. Dana dikembalikan melalui mekanisme yang ditentukan oleh platform dalam jangka waktu tertentu.
+
+#### SOP Akses Produk Digital
+
+1. Sistem menerima sinyal verifikasi berhasil dari payment gateway.
+2. Hak akses ditambahkan secara otomatis ke database akun pengguna.
+3. Sistem mengirimkan notifikasi link download atau akses online melalui email.
+4. Produk tersedia secara instan di dasbor pengguna.
+
+### PERTANYAAN YANG SERING DIAJUKAN (FAQ)
+
+Apa fungsi payment gateway di platform ini?
+Payment gateway berfungsi sebagai sistem otomatis yang memproses dan memverifikasi pembayaran Anda secara aman dan real-time, sehingga Anda tidak perlu melakukan konfirmasi manual.
+
+Berapa kisaran harga produk digital yang tersedia?
+Harga produk digital sangat bervariasi tergantung kategori, mulai dari Rp15.000 untuk paket AI Prompt hingga Rp1.500.000 untuk Source Code aplikasi yang kompleks.
+
+Bagaimana proses pembayaran di SMKN 5 Selayar E-Store?
+Setelah checkout, Anda akan diarahkan ke halaman pembayaran aman untuk memilih metode digital yang diinginkan, kemudian sistem akan memverifikasi transaksi secara otomatis.
+
+Kapan saya bisa mengakses produk digital yang telah dibeli?
+Produk dapat diakses atau diunduh secara instan segera setelah sistem pembayaran menyatakan transaksi Anda berhasil atau sukses.
+
+Apakah saya bisa mengajukan refund jika sudah membeli produk?
+Refund hanya dapat diproses apabila terjadi kendala teknis pada sistem yang membuat produk tidak dapat diakses, karena sifat produk digital yang dapat langsung dikonsumsi setelah transaksi.
