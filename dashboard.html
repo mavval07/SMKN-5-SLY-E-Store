@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Penjual - SMKN 5 Selayar E-Store</title>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-purple: #8a2be2;
+            --dark-bg: #0a0a0a;
+            --sidebar-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text-light: #f4f4f4;
+            --text-gray: #b0b0b0;
+            --accent-gray: #2a2a2a;
+            --success: #00c853;
+            --pending: #ffd600;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: 260px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--accent-gray);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0 0.8rem;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            color: var(--text-gray);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--primary-purple);
+        }
+
+        .nav-link i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            flex: 1;
+            margin-left: 260px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--accent-gray);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-logout {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #ff5252;
+            color: #ff5252;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .btn-logout:hover {
+            background: #ff5252;
+            color: white;
+        }
+
+        /* STAT CARDS */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--accent-gray);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .stat-trend {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            color: var(--success);
+        }
+
+        /* CHARTS SECTION */
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--accent-gray);
+        }
+
+        .chart-card h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* TABLE SECTION */
+        .table-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--accent-gray);
+            overflow: hidden;
+        }
+
+        .table-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--accent-gray);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(255,255,255,0.02);
+            padding: 1rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--accent-gray);
+            font-size: 0.9rem;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-success { background: rgba(0, 200, 83, 0.1); color: var(--success); }
+        .status-pending { background: rgba(255, 214, 0, 0.1); color: var(--pending); }
+
+        /* MOBILE TOGGLE */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            aside {
+                left: -260px;
+            }
+            aside.active {
+                left: 0;
+            }
+            main {
+                margin-left: 0;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Store SMKN 5</div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Produk</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Transaksi</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Laporan</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pengaturan</a>
+            </li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="top-bar">
+            <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+            <div class="user-info">
+                <span class="user-name">Admin SMKN 5</span>
+                <button class="btn-logout">Keluar</button>
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Penjualan</div>
+                <div class="stat-value">Rp 12.450.000</div>
+                <div class="stat-trend">↑ 12% dari bulan lalu</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Transaksi</div>
+                <div class="stat-value">184</div>
+                <div class="stat-trend">↑ 5% hari ini</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Produk Terjual</div>
+                <div class="stat-value">320</div>
+                <div class="stat-trend" style="color: var(--text-gray);">Digital Assets</div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>Penjualan 30 Hari Terakhir</h3>
+                <canvas id="monthlyChart"></canvas>
+                <p style="font-size: 0.75rem; color: var(--text-gray); margin-top: 1rem;">
+                    * Data menunjukkan tren pertumbuhan stabil di kuartal ini.
+                </p>
+            </div>
+            <div class="chart-card">
+                <h3>Aktivitas 7 Hari Terakhir</h3>
+                <canvas id="weeklyChart"></canvas>
+                <p style="font-size: 0.75rem; color: var(--text-gray); margin-top: 1rem;">
+                    * Puncak transaksi terjadi pada akhir pekan.
+                </p>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-header">
+                <h3>Transaksi Terbaru</h3>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Produk</th>
+                            <th>Email</th>
+                            <th>No. HP</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#DE-17151012</td>
+                            <td>E-Book Kopi Selayar</td>
+                            <td>budi@email.com</td>
+                            <td>0812345678</td>
+                            <td><span class="status-badge status-success">Berhasil</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DE-17151015</td>
+                            <td>Video Resep Keripik</td>
+                            <td>sari@email.com</td>
+                            <td>0821998877</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DE-17151020</td>
+                            <td>Template UMKM</td>
+                            <td>selayar_jaya@email.com</td>
+                            <td>0852443322</td>
+                            <td><span class="status-badge status-success">Berhasil</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DE-17151025</td>
+                            <td>E-Book Kopi Selayar</td>
+                            <td>andi.p@email.com</td>
+                            <td>0811223344</td>
+                            <td><span class="status-badge status-success">Berhasil</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Global Chart Defaults
+        Chart.defaults.color = '#b0b0b0';
+        Chart.defaults.borderColor = '#2a2a2a';
+
+        // Monthly Chart
+        const ctxMonthly = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(ctxMonthly, {
+            type: 'line',
+            data: {
+                labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
+                datasets: [{
+                    label: 'Penjualan (Rp)',
+                    data: [2100000, 4500000, 3200000, 5800000],
+                    borderColor: '#8a2be2',
+                    backgroundColor: 'rgba(138, 43, 226, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // Weekly Chart
+        const ctxWeekly = document.getElementById('weeklyChart').getContext('2d');
+        new Chart(ctxWeekly, {
+            type: 'bar',
+            data: {
+                labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
+                datasets: [{
+                    label: 'Transaksi',
+                    data: [12, 19, 15, 8, 22, 35, 28],
+                    backgroundColor: '#8a2be2',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+    </script>
+</body>
+</html>
